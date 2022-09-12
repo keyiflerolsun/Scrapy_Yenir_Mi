@@ -83,7 +83,7 @@ def basla(kac_saniye_arayla:int):
 
     veriler = load(open(f"{YeniCikanSpider.name}.json"))
 
-    konsol.print(f"[yellow] Fonksiyon Bitti! » {zaman_donustur(time() - baslangic)} «\n\n")
+    konsol.print(f"[magenta]Fonksiyon Bitti! » {zaman_donustur(time() - baslangic)} «\n\n")
 
 
 if __name__ == "__main__":
