@@ -4,7 +4,6 @@ from crochet import setup
 setup()
 
 from contextlib     import suppress
-from rich           import print
 from scrapy         import Spider, Request
 from scrapy.crawler import CrawlerRunner
 from json           import load
@@ -45,7 +44,7 @@ class YeniCikanSpider(Spider):
             "aciklama"  : detay_alani.xpath("normalize-space(.//span[@class='info__text'])").get(),
             "kapak"     : response.xpath("//div[@class='book-front']/a/img/@src").get()
         }
-        print(veri)
+        konsol.print(veri)
         yield veri
 
     # Fonksiyon ismi ve parametreleri değiştirilmemeli!
@@ -92,7 +91,7 @@ if __name__ == "__main__":
         while True:
             basla(kac_saniye_arayla=40)
     except JSONDecodeError:
-        print("\n\n\n[bold red][!] Verdiğiniz Saniye Aralığı Örümcek İçin Yetersiz!")
+        konsol.print("\n\n\n[bold red][!] Verdiğiniz Saniye Aralığı Örümcek İçin Yetersiz!")
         cikis_yap()
     except Exception as hata:
         hata_yakala(hata)
