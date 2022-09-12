@@ -83,7 +83,7 @@ def basla(kac_saniye_arayla:int):
 
     veriler = load(open(f"{YeniCikanSpider.name}.json"))
 
-    konsol.print(f"\n\n[yellow]{len(veriler)} Adet Kitap Dızlandı » {zaman_donustur(time() - baslangic)} » {YeniCikanSpider.name}.json\n\n")
+    konsol.print(f"[yellow] Fonksiyon Bitti! » {zaman_donustur(time() - baslangic)} «\n\n")
 
 
 if __name__ == "__main__":
@@ -91,7 +91,7 @@ if __name__ == "__main__":
         while True:
             basla(kac_saniye_arayla=40)
     except JSONDecodeError:
-        konsol.print("\n\n\n[bold red][!] Verdiğiniz Saniye Aralığı Örümcek İçin Yetersiz!")
+        konsol.print(f"\n\n\n[bold red][!] Verdiğiniz Saniye Aralığı Örümcek İçin Yetersiz! | {zaman_donustur(time() - baslangic)}")
         cikis_yap()
     except Exception as hata:
         hata_yakala(hata)
